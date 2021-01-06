@@ -1,27 +1,10 @@
-<%= form_with(model: talk) do |form| %>
-  <% if talk.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(talk.errors.count, "error") %> prohibited this talk from being saved:</h2>
 
-      <ul>
-        <% talk.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<div class='shadow rounded-md mr-3 mb-4'>
+  <%= form_with(model: talk, local: true) do |form| %>
+
+    <div class="field p-4">
+      <h3>TALK SOMETHING</h3>
+      <%= form.text_field :content, class: 'placeholder-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md', placeholder: 'Create a new Talk' %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :author_id %>
-    <%= form.number_field :author_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
