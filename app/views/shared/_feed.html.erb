@@ -1,0 +1,29 @@
+
+<div class='px-3 mx-3 pt-4'>
+<%= render 'talks/form', talk: @talk %>
+
+<div class='pt-3 px-4  mr-3 bg-white shadow'>
+  <% @talks.each do |talk| %>
+    <article class='grid grid-cols-10 py-1 '>
+      <div class='flex-initial col-span-1 pr-5 sticky'>
+        <%= gravatar_image_tag('mke@mke.com', :class => 'rounded-full', :gravatar => { :size => 50 }) %> 
+      </div>
+      <div class='flex-auto flex-wrap col-span-9'>
+        <div class='grid grid-cols-3 justify-between border-b-1'>
+          <p class='text-blue-700'><%= talk.author.fullName.capitalize %></p>
+          <p class='text-right pr-5 text-xs font-medium text-blue-700 focus:outline-none  px-3 rounded-md text-sm font-medium transform hover:scale-110 motion-reduce:transform-none'><strong> <%if current_user_is_author?(talk)%>
+            <%= link_to 'Delete', talk, method: :delete, data: { confirm: 'Are you sure?', class: 'hover:bg-transparent' } %>
+          <%end%></strong></p>
+          <p class='text-right pr-5 text-xs font-medium text-blue-700 focus:outline-none  px-3 rounded-md text-sm font-medium transform hover:scale-110 motion-reduce:transform-none hover:bg-transparent'><i class='text-yellow-900 bg-blue-100 rounded-full p-1 w-12 h-6'><%= talk.likes.count %></i>  <strong><%= like_or_dislike_btn(talk) %></strong></p>
+        </div>
+        <div class='pt-2'>
+          <p><%= talk.content %></p>
+          <br>
+        </div>
+      </div>
+    </article>
+    <hr class='divide-blue-200'>
+  
+  <% end %>
+</div>
+</div>
