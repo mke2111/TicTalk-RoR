@@ -20,6 +20,9 @@
 
 [Live Demo](https://dry-journey-50141.herokuapp.com)
 
+## Live Video
+
+[Live Demo](https://www.loom.com/share/8a4c40e63d244745891da25242bd5585)
 
 
 ## Getting Started
