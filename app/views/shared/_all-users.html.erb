@@ -2,16 +2,15 @@
 
 <div class='pt-3 px-4  mr-3 bg-white shadow'>
   <% @users.each do |user| %>
-    <article class='flex flex-row py-1 '>
-      <div class='flex-initial col-span-1 pr-5 sticky'>
+    <article class='flex flex-row py-1 justify-between items-center'>
+      <div class='flex flex-row pr-5 sticky'>
         <%= gravatar_image_tag('mke@mke.com', :class => 'rounded-full', :gravatar => { :size => 50 }) %> 
+        <p class='text-blue-700 pt-3 pl-5'><%= user.fullname.capitalize %></p>
       </div>
       
-      <div class='grid grid-cols-3 justify-between border-b-1'>
-        <p class='text-blue-700'><%= user.fullname.capitalize %></p>
-      </div>
+      
       <div class=''>
-      <p class='text-right pr-5 text-xs font-medium text-blue-700 focus:outline-none  px-3 rounded-md text-sm font-medium transform hover:scale-110 motion-reduce:transform-none hover:bg-transparent'> 
+      <p class='text-right pr-5 text-xs font-medium text-blue-700 focus:outline-none  px-3 rounded-md text-sm font-medium hover:bg-transparent'> 
             <strong>
               <%if current_user?(user)%>
                 <button class='px-2 bg-blue-300 rounded-lg cursor-pointer'>My Account</button>
@@ -24,6 +23,7 @@
               <%end%>
                 
             </strong></p></div>
+      <div></div>
     </article>
     <hr class='divide-blue-200'>
   
