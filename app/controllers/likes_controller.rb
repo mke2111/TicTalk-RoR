@@ -1,5 +1,5 @@
 class LikesController < ApplicationController
-   def create
+  def create
     @like = helpers.current_user.likes.new(talk_id: params[:talk_id])
 
     if @like.save
