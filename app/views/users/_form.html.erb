@@ -1,37 +1,37 @@
-<%= form_with(model: user) do |form| %>
+<%= form_with(model: user, local: true) do |form| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
       <ul>
-        <% user.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <% user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
   <div class="field">
-    <%= form.label :username %>
-    <%= form.text_field :username %>
+    <%= form.label :username, class: 'block text-sm text-left font-medium text-gray-700' %>
+    <%= form.text_field :username, class: 'mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md' %>
   </div>
 
   <div class="field">
-    <%= form.label :fullname %>
-    <%= form.text_field :fullname %>
+    <%= form.label :fullname, class: 'block text-sm text-left font-medium text-gray-700' %>
+    <%= form.text_field :fullname, class: 'mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md' %>
   </div>
 
   <div class="field">
-    <%= form.label :coverimage %>
-    <%= form.text_field :coverimage %>
+    <%= form.label :photo, 'Profile Photo', class: 'block text-sm text-left font-medium text-gray-700' %>
+    <%= form.text_field :photo, class: 'mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md' %>
   </div>
 
   <div class="field">
-    <%= form.label :photo %>
-    <%= form.text_field :photo %>
+    <%= form.label :coverimage, 'Cover Image', class: 'block text-sm text-left font-medium text-gray-700' %>
+    <%= form.text_field :coverimage, class: 'mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md' %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions text-center">
+    <%= form.submit 'Sign Up', class: 'bg-blue-200 rounded-full py-1 px-3 cursor-pointer ' %>
   </div>
 <% end %>
