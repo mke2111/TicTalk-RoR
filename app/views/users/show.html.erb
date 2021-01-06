@@ -1,24 +1,25 @@
-<p id="notice"><%= notice %></p>
+<main class='grid grid-cols-5'>
+  <% current_user?(@user) ? page = 'profile' : page = 'none' %>
+  <div class='z-40 col-span-1 bg-gray-900 text-white h-screen sticky top-0'>
+    <%= render 'shared/nav', page: 'home' %>
+  </div>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+  <div class='col-span-4 flex flex-col'>
+    <div class='sticky top-0'>
+      <%= render 'shared/header'%>
+    </div>
+    <div class='grid grid-cols-4'>
+      <div class='col-span-3 border-r-2 h-screen '>
+        <div class="cover-image-div">
+          <%= image_tag(cover_image(@user.coverimage), :class =>'cover-image')%> 
+        </div>
+        <%= render 'shared/feed' %>
+      </div>
 
-<p>
-  <strong>Fullname:</strong>
-  <%= @user.fullname %>
-</p>
+      <div class='col-span-1 pt-4'>
+        <%= render 'shared/user-profile' %>
+      </div>
+    </div>
+  </div> 
 
-<p>
-  <strong>Coverimage:</strong>
-  <%= @user.coverimage %>
-</p>
-
-<p>
-  <strong>Photo:</strong>
-  <%= @user.photo %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+</main>
