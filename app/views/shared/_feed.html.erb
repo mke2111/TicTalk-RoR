@@ -10,7 +10,7 @@
       </div>
       <div class='flex-auto flex-wrap col-span-9'>
         <div class='grid grid-cols-3 justify-between border-b-1'>
-          <p class='text-blue-700'><%= talk.author.fullName.capitalize %></p>
+          <p class='text-blue-700'><%= talk.author.fullname.capitalize %></p>
           <p class='text-right pr-5 text-xs font-medium text-blue-700 focus:outline-none  px-3 rounded-md text-sm font-medium transform hover:scale-110 motion-reduce:transform-none'><strong> <%if current_user_is_author?(talk)%>
             <%= link_to 'Delete', talk, method: :delete, data: { confirm: 'Are you sure?', class: 'hover:bg-transparent' } %>
           <%end%></strong></p>
