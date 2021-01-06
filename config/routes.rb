@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :followings
   resources :talks
   resources :users
   root 'users#index'
