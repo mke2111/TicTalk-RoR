@@ -4,18 +4,18 @@
     </div>
     <div class='text-center px-7 py-7'>
       <h3>
-        <%= current_user.username.upcase %>
+        @<%= current_user.username.upcase %>
       </h3>
     </div>
   </div>
 
   <hr>
   <section class='flex flex-row justify-center text-center m-auto'>
-    <div class=' has-text-centered px-5 py-2 border-r-2'>
+    <div class=' has-text-centered px-5 py-2 border-r-2 border-blue-100'>
       <h3><%= current_user.followers.count %></h3>
       <h4>Followers</h4>
     </div>
-    <div class=' has-text-centered px-5 py-2 border-r-2'>
+    <div class=' has-text-centered px-5 py-2 border-r-2 border-blue-100'>
       <h3><%= current_user.following.count %></h3>
       <h4>Following</h4>
     </div>

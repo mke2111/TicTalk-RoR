@@ -3,7 +3,7 @@
 <div class='pt-3 px-4  mr-3 bg-white shadow'>
   <% @users.each do |user| %>
     <article class='flex flex-row py-1 justify-between items-center'>
-      <div class='flex flex-row pr-5 sticky'>
+      <div class='flex flex-row pr-5'>
         <%= gravatar_image_tag('mke@mke.com', :class => 'rounded-full', :gravatar => { :size => 50 }) %> 
         <p class='text-blue-700 pt-3 pl-5'><%= user.fullname.capitalize %></p>
       </div>
