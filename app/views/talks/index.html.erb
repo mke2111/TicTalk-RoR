@@ -1,29 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Talks</h1>
+<main class='grid grid-cols-5'>
+  <div class='z-40 col-span-1 bg-gray-900 text-white h-screen sticky top-0'>
+    <%= render 'shared/nav', page: 'home' %>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Author</th>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div class='col-span-4 flex flex-col'>
+    <div class='sticky top-0'>
+      <%= render 'shared/header'%>
+    </div>
+    <div class='grid grid-cols-4'>
+      <div class='col-span-3 border-r-2 h-screen px-3 mx-3 pt-4'>
+        <%= render 'shared/feed' %>
+      </div>
 
-  <tbody>
-    <% @talks.each do |talk| %>
-      <tr>
-        <td><%= talk.author_id %></td>
-        <td><%= talk.content %></td>
-        <td><%= link_to 'Show', talk %></td>
-        <td><%= link_to 'Edit', edit_talk_path(talk) %></td>
-        <td><%= link_to 'Destroy', talk, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <div class='col-span-1 pt-4'>
+        <h2 class='lower-margin'>WHO TO FOLLOW</h2>
+        <hr>
+        <%= render 'shared/who-to-follow' %>
+      </div>
+    </div>
+  </div> 
 
-<br>
-
-<%= link_to 'New Talk', new_talk_path %>
+</main>
