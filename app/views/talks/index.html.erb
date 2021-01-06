@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Talks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Author</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @talks.each do |talk| %>
+      <tr>
+        <td><%= talk.author_id %></td>
+        <td><%= talk.content %></td>
+        <td><%= link_to 'Show', talk %></td>
+        <td><%= link_to 'Edit', edit_talk_path(talk) %></td>
+        <td><%= link_to 'Destroy', talk, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Talk', new_talk_path %>
