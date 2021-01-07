@@ -24,6 +24,10 @@
 
 [Live Video Demo](https://www.loom.com/share/8a4c40e63d244745891da25242bd5585)
 
+## N + 1 Explanation
+
+[N+1](https://www.loom.com/share/36c3fb2d37314b7eb670217cbfe71c20) 
+
 
 ## Getting Started
 

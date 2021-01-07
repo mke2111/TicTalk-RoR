@@ -7,9 +7,11 @@ module ApplicationHelper
     email ? 'https://source.unsplash.com/random/200x200' : 'default_avatar.jpg'
   end
 
+  # rubocop:disable Lint/UselessAssignment
   def cover_image(link)
-    link ||=  'https://source.unsplash.com/random/1000x200'
+    link ||= 'https://source.unsplash.com/random/1000x200'
   end
+  # rubocop:enable Lint/UselessAssignment
 
   def following?(user)
     current_user.following.include?(user)
