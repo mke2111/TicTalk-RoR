@@ -4,19 +4,11 @@ module ApplicationHelper
   end
 
   def photo(email)
-    if email.nil? || email.empty?
-      'https://source.unsplash.com/random/200x200'
-    else
-      'default_avatar.jpg'
-    end
+    email ? 'https://source.unsplash.com/random/200x200' : 'default_avatar.jpg'
   end
 
   def cover_image(link)
-    if link.nil? || link.empty?
-      'https://source.unsplash.com/random/1000x200'
-    else
-      link
-    end
+    link ||=  'https://source.unsplash.com/random/1000x200'
   end
 
   def following?(user)
