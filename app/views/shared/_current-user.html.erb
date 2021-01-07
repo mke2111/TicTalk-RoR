@@ -1,0 +1,45 @@
+<div class='flex flex-row justify-around p-5 m-auto'>
+    <div class=''>
+      <%= image_tag(photo(current_user.photo), class: 'rounded-md ')%>
+    </div>
+    <div class='text-center px-7 py-7'>
+      <h3>
+        @<%= current_user.username.upcase %>
+      </h3>
+    </div>
+  </div>
+
+  <hr>
+  <section class='flex flex-row justify-center text-center m-auto'>
+    <div class=' has-text-centered px-5 py-2 border-r-2 border-blue-100'>
+      <h3><%= current_user.followers.count %></h3>
+      <h4>Followers</h4>
+    </div>
+    <div class=' has-text-centered px-5 py-2 border-r-2 border-blue-100'>
+      <h3><%= current_user.following.count %></h3>
+      <h4>Following</h4>
+    </div>
+    <div class=' has-text-centered px-5 py-2'>
+      <h3><%= current_user.talks.count %></h3>
+      <h4>Talks</h4>
+    </div>
+  </section>
+  <hr>
+  <section class='text-lg'>
+    <div class='p-3 hover:bg-gray-800'>
+      <h3><i class="fas fa-home"></i>
+        <%= link_to('Home', talks_path, class: 'menu-item ') %>
+      </h3>
+    </div>
+    <div class='p-3 hover:bg-gray-800'>
+      <h3><i class="far fa-user"></i>
+        <%= link_to('Profile', user_path(session[:user_id]), class: 'menu-item') %>
+      </h3>
+    </div>
+    <div class='p-3 hover:bg-gray-800'>
+      <h3><i class="fas fa-link"></i>
+        <%= link_to('People', users_path, class: 'menu-item ') %>
+      </h3>
+    </div>
+
+  </section>

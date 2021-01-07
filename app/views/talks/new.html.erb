@@ -1,0 +1,17 @@
+<main class='main flex'>
+  <%= render 'shared/nav', page: 'people' %>
+  <div class='right-pane'>
+    <div class='flex'>
+      <div class='home-opinions'>
+      <p id="notice"><%= notice %></p>
+        <div class='posts-header'>
+          <h2>NEW TALK</h2>
+        </div>
+        <div class='posts-area'>
+          <%= render 'form', talk: @talk %>
+          <%= link_to 'Discard', talks_path %>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,10 @@
+
+<div class='shadow rounded-md mr-3 mb-4'>
+  <%= form_with(model: talk, local: true) do |form| %>
+
+    <div class="field p-4">
+      <h3>TALK SOMETHING</h3>
+      <%= form.text_field :content, class: 'placeholder-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md', placeholder: 'Create a new Talk' %>
+    </div>
+  <% end %>
+</div>

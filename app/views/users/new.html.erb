@@ -1,5 +1,8 @@
-<h1>New User</h1>
+<%= render 'shared/header' %>
 
-<%= render 'form', user: @user %>
+<h1 class='text-center text-3xl font-mono p-3'>Sign Up to <span class='text-blue-600 text-4xl animate-bounce w-6 h-6'>TicTalk</span></h1>
 
-<%= link_to 'Back', users_path %>
+<div class='text-center animate-pulse border border-light-blue-300 shadow rounded-md p-4 max-w-sm w-full mx-auto mt-6'>
+  <%= render 'form', user: @user %>
+  <%= link_to 'Back', users_path, class: 'bg-red-200 rounded-full py-1 px-3 mt-2 cursor-pointer' %>
+</div>

@@ -1,0 +1,24 @@
+
+<main class='grid grid-cols-5'>
+  <div class='z-40 col-span-1 bg-gray-900 text-white h-screen sticky top-0'>
+    <%= render 'shared/current-user', page: 'home' %>
+  </div>
+
+  <div class='col-span-4 flex flex-col'>
+    <div class='sticky top-0'>
+      <%= render 'shared/header'%>
+    </div>
+    <div class='grid grid-cols-4'>
+      <div class='col-span-3 border-r-2 h-screen px-3 mx-3 pt-4'>
+        <%= render 'shared/feed' %>
+      </div>
+
+      <div class='col-span-1 pt-4'>
+        <h2 class='lower-margin'>WHO TO FOLLOW</h2>
+        <hr>
+        <%= render 'shared/who-to-follow' %>
+      </div>
+    </div>
+  </div> 
+
+</main>
